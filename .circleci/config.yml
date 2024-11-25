@@ -39,6 +39,7 @@ jobs:
           command: |
             #Authorize target org
             #sfdx auth:jwt:grant --instanceurl $ENDPOINT  --clientid $CONSUMER_KEY --jwtkeyfile /JWT/server.key --username $USER_NAME --setalias UAT
+            ls
             sf org login jwt --clientid $CONSUMER_KEY --jwt-key-file ./JWT/server.key --username $USER_NAME --alias my-hub-org
       - run:
           name: Deploy to Target Deployment Org
